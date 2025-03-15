@@ -1,0 +1,336 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+#include<stdlib.h>
+#include<string.h>
+char name1[20],name2[20],name3[20];
+int c1c1=10,c1c2=70,c1c3=15,c1c4=40,c1c5=45,c1c6=65,c1c7=20,c1c8=30,c1c9=50,c1c10=60,c1c11=20,c1c12=30,c1c13=50,c1c14=60;
+int c2c1=10,c2c2=70,c2c3=15,c2c4=40,c2c5=45,c2c6=65,c2c7=20,c2c8=30,c2c9=50,c2c10=60,c2c11=20,c2c12=30,c2c13=50,c2c14=60;
+int c3c1=10,c3c2=70,c3c3=15,c3c4=40,c3c5=45,c3c6=65,c3c7=20,c3c8=30,c3c9=50,c3c10=60,c3c11=20,c3c12=30,c3c13=50,c3c14=60;
+int zp=40,vp=40,mp=40;
+char des,ec;
+int fill(int x,int y,int old,int nu);
+void intro()
+{
+cleardevice();
+rectangle(1,1,800,480);//boundary
+floodfill(2,2,WHITE);//fill boundary with white
+setcolor(4);
+delay(1000);
+outtextxy(60,100,"YOU ");delay(100);//starting firstline
+outtextxy(90,100,"ARE ");delay(100);
+outtextxy(120,100,"EXPERIENCING ");delay(100);
+outtextxy(225,100,"A ");delay(100);
+outtextxy(240,100,"CAR ");delay(100);
+outtextxy(270,100,"RACING ");delay(100);
+outtextxy(325,100,"GAME...");delay(100);//end of first line
+setcolor(2);
+delay(1000);
+outtextxy(100,120,"DESIGNED BY-");
+setcolor(5);
+delay(1000);
+sound(10*10);delay(50);
+outtextxy(60,150,"* SAYED YAWAR ANWAR");
+nosound();
+delay(1000);
+sound(10*10);delay(50);
+outtextxy(60,180,"* BUBERE HUZAIFA");
+nosound();
+delay(1000);
+sound(10*10);delay(50);
+outtextxy(60,210,"* CHAITANYA AMUP");
+nosound();
+delay(1000);
+sound(10*10);delay(50);
+outtextxy(60,240,"* SWAID MULLA");
+nosound();
+setcolor(2);
+delay(500);
+outtextxy(50,280,"STUDENTS OF M.H SABOO SIDDIK POLYTECHNIC...");
+setcolor(BLACK);
+outtextxy(100,320,"Press ANY KEY to continue...");
+getch();
+}
+void enter_name()
+{
+cleardevice();
+setcolor(12);
+delay(1000);
+outtextxy(100,100,"Enter ");delay(100);
+outtextxy(150,100,"Name "); delay(100);
+outtextxy(195,100,"OF ");   delay(100);
+outtextxy(220,100,"Participants:"); delay(1000);
+setcolor(14);
+//gotoxy(120,120);
+//textcolor(YELLOW);
+printf("\n\n\n\n\n\n\n\n\t\tEnter Player Z:");
+//name1=getchar();
+gets(name1);
+printf("\n\t\tEnter Player V:");
+gets(name2);
+printf("\n\t\tEnter Player M:");
+gets(name3);
+setcolor(14);
+outtextxy(100,230,"press ANY KEY to start the game...");
+getch();
+}
+void game_start()
+{
+
+}
+void track()
+{
+setcolor(BLACK);
+rectangle(1,1,800,480);//boundary
+//boundfill(262,45,RED);
+floodfill(2,2,WHITE);//fill boundary with white
+setcolor(BLACK);
+line(30,70,550,70);//Top line of track
+line(90,70,90,400);//start line
+line(30,400,550,400);//Bottom line of track
+rectangle(220,180,127,170);//divider 1
+rectangle(250,180,340,170);//divider 2
+rectangle(370,180,460,170);//divider 3
+rectangle(220,290,127,300);//divider 4
+rectangle(250,290,340,300);//divider 5
+rectangle(370,290,460,300);//divider 6
+rectangle(550,1,790,476);//finish block
+setcolor(RED);
+settextstyle(8,2,9);
+outtextxy(515,50,"FINISH");
+}
+void car1()
+{
+c1c1++;c1c2++;c1c3++;c1c4++;c1c5++;c1c6++;c1c7++;
+c1c8++;c1c9++;c1c10++;c1c11++;c1c12++;c1c13++;c1c14++;
+setcolor(BLACK);
+settextstyle(0,0,0);
+outtextxy(c1c5+5,115,"z");
+//rectangle(c1c1,100,c1c2,140);
+rectangle(c1c3,105,c1c4,135);
+rectangle(c1c5,105,c1c6,135);
+rectangle(c1c7,95,c1c8,100);
+rectangle(c1c9,95,c1c10,100);
+rectangle(c1c11,140,c1c12,145);
+rectangle(c1c13,140,c1c14,145);
+}
+void car1w()
+{
+setcolor(WHITE);
+outtextxy(c1c5+5,115,"z");
+//rectangle(c1c1,100,c1c2,140);
+rectangle(c1c3,105,c1c4,135);
+rectangle(c1c5,105,c1c6,135);
+rectangle(c1c7,95,c1c8,100);
+rectangle(c1c9,95,c1c10,100);
+rectangle(c1c11,140,c1c12,145);
+rectangle(c1c13,140,c1c14,145);
+}
+void car2()
+{
+c2c1++;c2c2++;c2c3++;c2c4++;c2c5++;c2c6++;c2c7++;
+c2c8++;c2c9++;c2c10++;c2c11++;c2c12++;c2c13++;c2c14++;
+setcolor(BLACK);
+outtextxy(c2c5+5,230,"v");
+//rectangle(c2c1,215,c2c2,255);
+rectangle(c2c3,220,c2c4,250);  //
+rectangle(c2c5,220,c2c6,250);
+rectangle(c2c7,210,c2c8,215);
+rectangle(c2c9,210,c2c10,215);
+rectangle(c2c11,255,c2c12,260);
+rectangle(c2c13,255,c2c14,260);
+}
+void car2w()
+{
+setcolor(WHITE);
+outtextxy(c2c5+5,230,"v");
+//rectangle(c2c1,215,c2c2,255);
+rectangle(c2c3,220,c2c4,250);  //
+rectangle(c2c5,220,c2c6,250);
+rectangle(c2c7,210,c2c8,215);
+rectangle(c2c9,210,c2c10,215);
+rectangle(c2c11,255,c2c12,260);
+rectangle(c2c13,255,c2c14,260);
+}
+void car3()
+{
+c3c1++;c3c2++;c3c3++;c3c4++;c3c5++;c3c6++;c3c7++;
+c3c8++;c3c9++;c3c10++;c3c11++;c3c12++;c3c13++;c3c14++;
+setcolor(BLACK);
+outtextxy(c3c5+5,345,"m");
+//rectangle(c3c1,330,c3c2,370);
+rectangle(c3c3,335,c3c4,365);
+rectangle(c3c5,335,c3c6,365);
+rectangle(c3c7,325,c3c8,330);
+rectangle(c3c9,325,c3c10,330);
+rectangle(c3c11,370,c3c12,375);
+rectangle(c3c13,370,c3c14,375);
+}
+void car3w()
+{
+setcolor(WHITE);
+outtextxy(c3c5+5,345,"m");
+//rectangle(c3c1,330,c3c2,370);
+rectangle(c3c3,335,c3c4,365);
+rectangle(c3c5,335,c3c6,365);
+rectangle(c3c7,325,c3c8,330);
+rectangle(c3c9,325,c3c10,330);
+rectangle(c3c11,370,c3c12,375);
+rectangle(c3c13,370,c3c14,375);
+}
+void timer()
+{
+rectangle(254,4,296,66);
+fill(260,10,BLACK,WHITE);
+rectangle(255,5,295,65);//timer outer
+fill(260,10,WHITE,7);//timer main box color
+rectangle(260,47,290,61);//red
+rectangle(260,28,290,42);//yellow
+rectangle(260,9,290,23);//green
+}
+void fill_timercol()
+{
+delay(1000);
+sound(10*10);delay(25);
+fill(270,55,WHITE,RED);//fill red
+delay(25);
+nosound();
+delay(1000);
+sound(10*10);delay(25);
+fill(270,35,WHITE,YELLOW);//fill yellow
+delay(25);
+nosound();
+delay(1000);
+sound(10*10);delay(25);
+fill(270,15,WHITE,GREEN);//fill green
+delay(25);
+nosound();
+delay(1000);
+}
+void fill_timerw()
+{
+fill(270,55,RED,WHITE);//fill red
+//delay(1000);
+fill(270,35,YELLOW,WHITE);//fill yellow
+//delay(1000);
+fill(270,15,GREEN,WHITE);//fill green
+//delay(1000);
+}
+int fill(int x,int y,int old,int nu)
+{
+int bor=BLACK,cp;
+//delay(1);
+cp=getpixel(x,y);
+if((cp!=nu) && (cp!=bor))
+	{
+	putpixel(x,y,nu);
+	fill(x+1,y,old,nu);
+	//cir_fill(x+1,y+1,old,nu);
+	fill(x,y+1,old,nu);
+	//cir_fill(x-1,y+1,old,nu);
+	fill(x-1,y,old,nu);
+	//cir_fill(x-1,y-1,old,nu);
+	fill(x,y-1,old,nu);
+	//cir_fill(x+1,y-1,old,nu);
+	}
+//getch();
+return 0;
+}
+void winner(char winpl[20])
+{
+//char str[20];
+//strcpy(str,winpl);
+strupr(winpl);
+cleardevice();
+rectangle(1,1,800,480);//boundary
+floodfill(2,2,WHITE);//fill boundary with white
+setcolor(4);
+//printf("\t\t\t");puts(winpl);
+settextstyle(1,0,3);
+outtextxy(250,150,winpl);
+settextstyle(10,0,4);
+outtextxy(50,170,"You Win The Game :)");
+settextstyle(1,0,2);
+outtextxy(160,240,"press 'E' to exit...");
+do
+{
+ec=getch();
+switch(ec)
+	{
+	case 'e':
+	exit(0);
+	case 'E':
+	exit(0);
+	default:
+	break;
+	}
+}while(ec!='e'|| ec!='E');
+getch();
+}
+
+void main()
+{
+int gd=DETECT,gm,i;
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+intro();
+enter_name();
+track();
+car1();
+car2();
+car3();
+timer();
+while(c1c2<=550 && c2c2<=550 && c3c2<=550)
+{
+fill_timerw();
+fill_timercol();
+des=getch();
+switch(des)
+	{
+	case 'z':
+	for(i=0;i<=120;i++)
+		{
+		car1w();
+		car1();
+		delay(15);
+		line(90,70,90,400);//start line
+		}
+	zp=zp+i;
+	break;
+
+	case 'v':
+	for(i=0;i<=120;i++)
+		{
+		car2w();
+		car2();
+		delay(15);
+		line(90,70,90,400);//start line
+		}
+	vp=vp+i;
+	break;
+
+	case 'm':
+	for(i=0;i<=120;i++)
+		{
+		car3w();
+		car3();
+		delay(15);
+		line(90,70,90,400);//start line
+		}
+	mp=mp+i;
+	break;
+
+	default:
+	break;
+	}
+
+	if(zp>=500)
+	winner(name1);
+	else if(vp>=500)
+	winner(name2);
+	else if(mp>=500)
+	winner(name3);
+}
+getch();
+closegraph();
+}
